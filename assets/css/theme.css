@@ -1,0 +1,376 @@
+/* =====================================================================
+   THEME v3 — প্রতিটি সেকশনের আলাদা রং + অ্যানিমেশন
+   (style.css এর পরে লোড হয়, তাই আগের কোডে হাত দিতে হয়নি)
+   রং বদলাতে চাইলে শুধু প্রতিটি সেকশনের --ac / --ac2 / --bgN ভ্যারিয়েবল বদলান।
+   ===================================================================== */
+
+/* ---------- Global ---------- */
+:root{--navy:#0b3154;--gold:#c49a4a;--gold2:#f0cc79}
+.section-space{position:relative;overflow:hidden}
+.section-space>.container{position:relative;z-index:1}
+
+/* সেকশনের পেছনে ভাসমান রঙিন বুদবুদ */
+.section-space::before,.section-space::after{
+  content:"";position:absolute;z-index:0;pointer-events:none;border-radius:50%;
+  width:340px;height:340px;opacity:.55}
+.section-space::before{top:-120px;left:-110px;
+  background:radial-gradient(circle,var(--b1,rgba(196,154,74,.28)) 0%,transparent 70%);
+  animation:floatA 14s ease-in-out infinite alternate}
+.section-space::after{bottom:-130px;right:-100px;width:400px;height:400px;
+  background:radial-gradient(circle,var(--b2,rgba(31,184,230,.22)) 0%,transparent 70%);
+  animation:floatB 17s ease-in-out infinite alternate}
+@keyframes floatA{to{transform:translate(70px,50px) scale(1.18)}}
+@keyframes floatB{to{transform:translate(-80px,-40px) scale(1.12)}}
+
+/* সেকশন হেডিং: রং ভ্যারিয়েবল থেকে আসে */
+.section-heading>span{color:var(--ac,#b28739);display:inline-block}
+.heading-line{background:linear-gradient(90deg,var(--ac,#c49a4a),var(--ac2,#f0cc79));border-radius:3px;
+  transition:width .9s cubic-bezier(.22,.8,.3,1) .35s}
+.js .section-heading:not(.in) .heading-line{width:0}
+.js .section-heading:not(.in)>span{opacity:0;letter-spacing:8px}
+.section-heading>span{transition:letter-spacing .9s ease,opacity .7s ease}
+.section-heading.in>span{letter-spacing:1px}
+
+/* ---------- রিভিল (স্ক্রলে ভেসে ওঠা) ---------- */
+.js .rv:not(.in){opacity:0}
+.rv.in{animation:rvUp .85s cubic-bezier(.22,.8,.3,1) var(--d,0s) backwards}
+.rv.in[data-a="left"]{animation-name:rvLeft}
+.rv.in[data-a="right"]{animation-name:rvRight}
+.rv.in[data-a="zoom"]{animation-name:rvZoom}
+.rv.in[data-a="flip"]{animation-name:rvFlip}
+@keyframes rvUp{from{opacity:0;transform:translateY(40px)}}
+@keyframes rvLeft{from{opacity:0;transform:translateX(-60px)}}
+@keyframes rvRight{from{opacity:0;transform:translateX(60px)}}
+@keyframes rvZoom{from{opacity:0;transform:scale(.8)}}
+@keyframes rvFlip{from{opacity:0;transform:perspective(700px) rotateX(-18deg) translateY(30px)}}
+
+/* ---------- Navbar ---------- */
+.main-nav{background:linear-gradient(90deg,#082744,#0b3154 50%,#0f4570)}
+
+/* ---------- Hero ---------- */
+.hero-section{position:relative}
+.hero-section::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(180deg,rgba(8,39,68,.18),transparent 35%,rgba(8,39,68,.35))}
+
+/* ---------- Ticker ---------- */
+.ticker-wrap{background:linear-gradient(90deg,#fff3d6,#fdf8ec 40%,#e9f4fb)}
+.ticker-label{background:linear-gradient(110deg,#c49a4a 30%,#f3d58a 50%,#c49a4a 70%);background-size:250% 100%;
+  animation:shine 3.5s linear infinite;border-radius:0 0 0 0}
+.ticker-label i{display:inline-block;animation:ring 2.4s ease-in-out infinite;transform-origin:50% 0}
+@keyframes shine{to{background-position:-250% 0}}
+@keyframes ring{0%,60%,100%{transform:rotate(0)}10%{transform:rotate(16deg)}20%{transform:rotate(-14deg)}30%{transform:rotate(10deg)}40%{transform:rotate(-8deg)}50%{transform:rotate(4deg)}}
+
+/* ---------- About (সোনালি + আকাশি) ---------- */
+#about{--ac:#c49a4a;--ac2:#f0cc79;--b1:rgba(240,204,121,.45);--b2:rgba(31,184,230,.2);
+  background:linear-gradient(180deg,#fff 0%,#fffaf0 100%)}
+#about .lead-copy{border-left:4px solid var(--gold);padding-left:18px}
+#about .btn-navy{position:relative;overflow:hidden;transition:.3s}
+#about .btn-navy i{transition:transform .3s}
+#about .btn-navy:hover i{transform:translateX(6px)}
+.about-photo:before{transform-origin:bottom right}
+.in .about-photo:before{animation:goldIn 1s cubic-bezier(.22,.8,.3,1) .35s backwards}
+@keyframes goldIn{from{transform:scale(.4);opacity:0}}
+.about-photo img{box-shadow:0 18px 40px rgba(11,49,84,.25);transition:transform .6s}
+.about-photo:hover img{transform:scale(1.03)}
+.about-stamp{animation:floaty 4s ease-in-out infinite;background:linear-gradient(135deg,#0b3154,#14588d)}
+@keyframes floaty{50%{transform:translateY(-10px)}}
+
+/* ---------- Stats (গাঢ় নীল গ্রেডিয়েন্ট + কাউন্টার) ---------- */
+.stats-section{position:relative;overflow:hidden;padding:46px 0;
+  background:linear-gradient(120deg,#082744,#0f4c80,#0a3a5e,#082744);background-size:300% 300%;
+  animation:bgShift 14s ease infinite}
+.stats-section::before{content:"";position:absolute;inset:0;opacity:.12;pointer-events:none;
+  background-image:radial-gradient(#fff 1.2px,transparent 1.2px);background-size:26px 26px}
+.stats-section .container{position:relative}
+@keyframes bgShift{50%{background-position:100% 50%}}
+.stat-item i{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-size:25px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(240,204,121,.55);margin-bottom:8px;
+  animation:pulseRing 2.8s ease-out infinite}
+.stat-item strong{font-size:34px;background:linear-gradient(180deg,#fff,#f0cc79);-webkit-background-clip:text;
+  background-clip:text;color:transparent}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 rgba(240,204,121,.55)}70%{box-shadow:0 0 0 16px rgba(240,204,121,0)}100%{box-shadow:0 0 0 0 rgba(240,204,121,0)}}
+
+/* ---------- Services (আকাশি, প্রতিটি কার্ডে আলাদা রং) ---------- */
+#services{--ac:#1292c4;--ac2:#2bb673;--b1:rgba(31,184,230,.30);--b2:rgba(43,182,115,.22);
+  background:linear-gradient(180deg,#e4f6fd 0%,#f6fcff 100%)}
+#services .row>div:nth-child(1) .service-card{--c:#1fb8e6;--cs:#e0f6fd}
+#services .row>div:nth-child(2) .service-card{--c:#ff7a59;--cs:#ffece6}
+#services .row>div:nth-child(3) .service-card{--c:#2bb673;--cs:#e1f6ec}
+#services .row>div:nth-child(4) .service-card{--c:#7c5cff;--cs:#ece8ff}
+.service-card{position:relative;overflow:hidden;border:1px solid #e3ecf3;border-bottom:4px solid var(--c);
+  transition:transform .3s,box-shadow .3s,border-color .3s}
+.service-card::before{content:"";position:absolute;inset:0;background:var(--cs);transform:translateY(101%);
+  transition:transform .4s ease;z-index:0}
+.service-card:hover::before{transform:translateY(0)}
+.service-card>*{position:relative;z-index:1}
+.service-icon{width:62px;height:62px;border-radius:50%;background:var(--cs);color:var(--c);font-size:26px;
+  transition:.4s}
+.service-card:hover{border-color:var(--c)}
+.service-card:hover .service-icon{background:var(--c);color:#fff;transform:rotate(360deg) scale(1.08)}
+
+/* ---------- Messages (ক্রিম/সোনালি) ---------- */
+#messages{--ac:#b28739;--ac2:#e8b04b;--b1:rgba(232,176,75,.40);--b2:rgba(255,122,89,.16);
+  background:linear-gradient(180deg,#fff8e6 0%,#fbefd0 100%)}
+.message-card{position:relative;overflow:hidden;border:0;border-top:5px solid var(--gold);
+  background:linear-gradient(180deg,#fff,#fffdf7)}
+.message-card::before{content:"\201D";position:absolute;right:16px;top:-14px;font-size:120px;line-height:1;
+  font-family:Georgia,serif;color:rgba(196,154,74,.18);pointer-events:none}
+.message-card>img{animation:ringPulse 2.8s ease-out infinite}
+@keyframes ringPulse{0%{box-shadow:0 0 0 0 rgba(196,154,74,.55)}70%{box-shadow:0 0 0 16px rgba(196,154,74,0)}100%{box-shadow:0 0 0 0 rgba(196,154,74,0)}}
+.message-role{display:inline-block;background:linear-gradient(90deg,#f6e3b4,#fbefd0);color:#7d5a14;
+  padding:3px 14px;border-radius:20px}
+.message-body a{position:relative;align-self:flex-start}
+.message-body a::after{content:"\2192";margin-left:6px;display:inline-block;transition:transform .3s}
+.message-body a:hover::after{transform:translateX(6px)}
+
+/* ---------- Notice (নীল) ---------- */
+#notice{--ac:#2f6fb5;--ac2:#1fb8e6;--b1:rgba(47,111,181,.25);--b2:rgba(31,184,230,.25);
+  background:linear-gradient(180deg,#e6effa 0%,#f5f8fd 100%)}
+.notice-card{box-shadow:0 16px 40px rgba(11,49,84,.12);border:0;border-top:5px solid #2f6fb5}
+.notice-table thead th{background:linear-gradient(90deg,#0b3154,#1b5a8f);color:#fff;border:0;font-size:14px}
+.notice-table tbody tr{transition:background .25s,box-shadow .25s}
+.notice-table tbody tr:hover{background:rgba(47,111,181,.09);box-shadow:inset 4px 0 0 #2f6fb5}
+.notice-table tbody tr td:first-child{font-weight:600;color:#2f6fb5}
+.notice-table td a i{transition:.3s}
+.notice-table td a:hover i{animation:wiggle .5s}
+@keyframes wiggle{25%{transform:rotate(-14deg)}75%{transform:rotate(14deg)}}
+
+/* ---------- Committee (সবুজ) ---------- */
+#committee{--ac:#1f8a5f;--ac2:#4cc38a;--b1:rgba(76,195,138,.32);--b2:rgba(240,204,121,.30);
+  background:linear-gradient(180deg,#e2f5eb 0%,#f4fbf7 100%)}
+#committee .person-card{position:relative;overflow:hidden;border:1px solid #d3ebdf;
+  transition:transform .35s,box-shadow .35s}
+#committee .person-card img{border-color:#d3efe1;transition:transform .5s,border-color .4s}
+#committee .person-card:hover img{transform:scale(1.07) rotate(-2deg);border-color:var(--ac2)}
+#committee .person-card>span{color:var(--ac);background:#e4f5ec;padding:3px 12px;border-radius:20px;
+  display:inline-block;font-size:14px}
+#committee .person-social:hover{background:var(--ac);color:#fff}
+
+/* ---------- Members (ল্যাভেন্ডার/বেগুনি) ---------- */
+#members{--ac:#6c4ad0;--ac2:#b08cf0;--b1:rgba(176,140,240,.32);--b2:rgba(255,122,89,.15);
+  background:linear-gradient(180deg,#f0ebfc 0%,#fbfaff 100%)}
+#members .member-card{background:#fff;border:1px solid #e4dcf7;transition:transform .3s,box-shadow .3s,border-color .3s}
+#members .member-card:hover{border-color:var(--ac2)}
+#members .member-card img{border-color:#e7defb;transition:transform .5s,border-color .4s}
+#members .member-card:hover img{transform:scale(1.07);border-color:var(--ac2)}
+#members .member-card small{color:var(--ac)}
+#members .mc-btn{background:var(--ac);box-shadow:0 6px 16px rgba(108,74,208,.35);transition:.3s}
+#members .mc-btn:hover{background:#c49a4a;transform:translateY(-50%) scale(1.12)}
+
+/* ---------- Events (পিচ/কোরাল) ---------- */
+#events{--ac:#e0613d;--ac2:#f5a524;--b1:rgba(255,122,89,.30);--b2:rgba(245,165,36,.25);
+  background:linear-gradient(180deg,#ffeee4 0%,#fffaf6 100%)}
+#events .event-card{background:#fff;border:1px solid #fbd9c5;box-shadow:0 8px 24px rgba(224,97,61,.12);
+  transition:transform .35s,box-shadow .35s,border-color .35s}
+#events .event-card:hover{transform:translateY(-8px);border-color:var(--ac);box-shadow:0 18px 36px rgba(224,97,61,.22)}
+#events .event-meta{color:#b8472a}
+#events .event-body>a{color:var(--ac)}
+#events .event-body>a:hover{color:#0b3154}
+#events .row>div:nth-child(1) .event-tag{background:#c49a4a;color:#fff}
+#events .row>div:nth-child(2) .event-tag{background:#1fb8e6;color:#fff}
+#events .row>div:nth-child(3) .event-tag{background:#2bb673;color:#fff}
+#events .row>div:nth-child(4) .event-tag{background:#7c5cff;color:#fff}
+.event-tag{animation:tagPop 3s ease-in-out infinite}
+@keyframes tagPop{50%{transform:scale(1.07)}}
+
+/* ---------- Gallery (গাঢ় নীল — ডার্ক ব্রেক) ---------- */
+#gallery{--ac:#f0cc79;--ac2:#c49a4a;--b1:rgba(240,204,121,.25);--b2:rgba(31,184,230,.28);
+  background:linear-gradient(135deg,#082744 0%,#0d466f 55%,#082744 100%)}
+#gallery .section-heading h2{color:#fff}
+#gallery .section-heading p{color:#b9c9d8}
+.gs{box-shadow:0 10px 26px rgba(0,0,0,.35);border:2px solid rgba(255,255,255,.08)}
+.js .gs.rv:not(.in){opacity:0}
+.gs.rv.in{animation:clipReveal 1s cubic-bezier(.22,.8,.3,1) var(--d,0s) backwards}
+@keyframes clipReveal{from{opacity:0;clip-path:inset(100% 0 0 0);transform:scale(1.15)}to{clip-path:inset(0)}}
+.gs::after{content:"";position:absolute;inset:0;border-radius:10px;border:3px solid transparent;transition:.35s;pointer-events:none}
+.gs:hover::after{border-color:var(--gold2)}
+
+/* ---------- Contact (টিল/আইস) ---------- */
+#contact{--ac:#0e8f9c;--ac2:#2bb673;--b1:rgba(14,143,156,.28);--b2:rgba(43,182,115,.25);
+  background:linear-gradient(180deg,#e0f5f6 0%,#f4fbfb 100%)}
+.contact-card{border-top:5px solid #0e8f9c}
+.contact-item{transition:transform .3s,background .3s;border-radius:6px}
+.contact-item:hover{transform:translateX(6px);background:#f3fbfb}
+.contact-item>i{transition:.4s}
+.contact-item:nth-child(1)>i{background:#fde8e8;color:#e0483f}
+.contact-item:nth-child(2)>i{background:#e1f6ec;color:#1f9d62}
+.contact-item:nth-child(3)>i{background:#e3eefb;color:#2f6fb5}
+.contact-item:nth-child(4)>i{background:#fdf0d6;color:#c9831a}
+.contact-item:hover>i{transform:scale(1.15) rotate(-8deg);animation:pulseDark 1.4s ease-out infinite}
+@keyframes pulseDark{0%{box-shadow:0 0 0 0 rgba(14,143,156,.4)}100%{box-shadow:0 0 0 14px rgba(14,143,156,0)}}
+.map-frame{border:4px solid #fff;transition:box-shadow .4s,transform .4s}
+.map-frame:hover{box-shadow:0 18px 40px rgba(14,143,156,.28);transform:translateY(-4px)}
+
+/* ---------- Footer ---------- */
+.site-footer{position:relative;background:linear-gradient(180deg,#0a2f52,#061c33)}
+.site-footer li a{display:inline-block;transition:transform .25s,color .25s}
+.site-footer li a:hover{transform:translateX(7px)}
+.footer-social a{transition:transform .3s,background .3s}
+.footer-social a:hover{transform:translateY(-5px) rotate(8deg)}
+
+/* ---------- Back to top ---------- */
+.back-to-top{background:linear-gradient(135deg,#c49a4a,#f0cc79);box-shadow:0 8px 20px rgba(196,154,74,.5);
+  border-radius:50%;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-6px)}}
+
+/* ---------- যাদের অ্যানিমেশন কমানো আছে ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv:not(.in),.js .gs.rv:not(.in){opacity:1}
+  .js .section-heading:not(.in) .heading-line{width:62px}
+  .js .section-heading:not(.in)>span{opacity:1;letter-spacing:1px}
+}
+@media(max-width:575.98px){
+  .section-space::before,.section-space::after{width:220px;height:220px}
+  .stat-item i{width:54px;height:54px;font-size:21px}
+  .stat-item strong{font-size:27px}
+}
+
+/* ===== কার্ড লিংক (single page এ যাবে) ===== */
+.card-link{display:block;height:100%;color:inherit;text-decoration:none}
+.card-link:hover{color:inherit}
+.event-card,.message-card{position:relative}
+
+/* ===== ভেতরের পেজ ===== */
+.page-banner{background:linear-gradient(135deg,#082744,#0d466f);color:#fff;text-align:center;padding:46px 0}
+.page-banner h1{font-size:clamp(26px,4vw,38px);font-weight:700;margin:0 0 6px}
+.page-banner .crumb{color:#c9d5df;font-size:14px}
+.page-banner .crumb a{color:#f0cc79;text-decoration:none}
+.single-section{min-height:55vh;background:#f6f8fb}
+.single-content{background:#fff;border:1px solid #e8edf2;border-radius:8px;padding:34px;box-shadow:0 8px 25px #19314d0b;line-height:1.9;color:#34465a}
+.gallery-page{background:#f6f8fb}
+.gallery-all{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.gallery-all .gs{aspect-ratio:4/3}
+@media(max-width:767.98px){.gallery-all{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+/* ===== গ্যালারি লাইটবক্স (পপ-আপ) ===== */
+.lb{position:fixed;inset:0;z-index:2000;background:rgba(4,16,30,.92);display:flex;align-items:center;justify-content:center;padding:56px 16px 24px;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.lb.show{opacity:1;visibility:visible}
+.lb-img{max-width:min(1100px,100%);max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.6);transform:scale(.85);transition:transform .3s cubic-bezier(.22,.8,.3,1)}
+.lb.show .lb-img{transform:scale(1)}
+.lb-close{position:absolute;top:14px;right:16px;width:42px;height:42px;border:0;border-radius:50%;background:#fff;color:#0b3154;font-size:20px;display:grid;place-items:center;cursor:pointer;transition:.25s}
+.lb-close:hover{background:#c49a4a;transform:rotate(90deg)}
+
+/* ===== আইনজীবী খোঁজো (সার্চ) ===== */
+.search-strip{background:linear-gradient(90deg,#0b3154,#0f4570);padding:22px 0;position:relative;z-index:3}
+.search-box{display:flex;align-items:center;gap:12px;max-width:900px;margin:auto;background:#fff;border-radius:50px;padding:7px 7px 7px 24px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.search-box label{white-space:nowrap;font-weight:700;color:#0b3154;margin:0}
+.search-box label i{color:#c49a4a}
+.search-box input{flex:1;min-width:0;border:0;outline:0;font-size:16px;padding:10px 6px;background:transparent}
+.search-box button{border:0;background:linear-gradient(135deg,#c49a4a,#e4bd70);color:#082746;font-weight:700;padding:11px 30px;border-radius:40px;transition:.25s}
+.search-box button:hover{background:#0b3154;color:#fff}
+@media(max-width:767.98px){.search-box{flex-wrap:wrap;border-radius:18px;padding:14px}.search-box label{width:100%}.search-box input{border:1px solid #dde4ec;border-radius:8px;padding:10px 12px}.search-box button{width:100%}}
+
+/* ===== সংবাদ (নীল) ===== */
+#news{--ac:#2f6fb5;--ac2:#1fb8e6;--b1:rgba(31,184,230,.28);--b2:rgba(47,111,181,.2);background:linear-gradient(180deg,#e6f1fb 0%,#f7fbff 100%)}
+.news-card{position:relative;height:100%;display:flex;flex-direction:column;background:#fff;border:1px solid #d6e5f5;border-radius:8px;overflow:hidden;box-shadow:0 8px 24px rgba(47,111,181,.1);transition:transform .35s,box-shadow .35s}
+.news-card:hover{transform:translateY(-8px);box-shadow:0 18px 36px rgba(47,111,181,.2)}
+.news-card .thumb{aspect-ratio:16/10;overflow:hidden}
+.news-card .thumb img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.news-card:hover .thumb img{transform:scale(1.07)}
+.news-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.news-date{font-size:13px;color:#2f6fb5;font-weight:600}
+.news-body h5{font-size:18px;font-weight:700;color:#0b3154;margin:8px 0;line-height:1.5}
+.news-body p{font-size:14px;color:#6b7a8c;line-height:1.8;flex:1}
+.news-body a{color:#2f6fb5;font-weight:600;text-decoration:none}
+
+/* ===== সাবেক নেতৃত্ব ===== */
+#leaders{--ac:#b28739;--ac2:#e4bd70;--b1:rgba(228,189,112,.32);--b2:rgba(31,184,230,.15);background:linear-gradient(180deg,#fff 0%,#fbf6ea 100%)}
+.leader-card{background:#fff;border:1px solid #efe2c4;border-top:5px solid #c49a4a;border-radius:8px;padding:24px 26px;box-shadow:0 8px 24px rgba(178,135,57,.1);height:100%}
+.leader-card h5{color:#0b3154;font-weight:700;margin-bottom:14px}
+.leader-card h5 i{color:#c49a4a}
+.leader-card ul{list-style:none;margin:0;padding:0}
+.leader-card li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px dashed #e8dcc0;transition:.25s}
+.leader-card li:last-child{border:0}
+.leader-card li:hover{padding-left:8px;background:#fdf8ec}
+.ld-name{font-weight:600;color:#263449}
+.ld-year{color:#a77c32;font-size:14px;white-space:nowrap}
+
+/* ===== ডাউনলোড ও লিংক (বালু/গোল্ড) ===== */
+#downloads{--ac:#a77c32;--ac2:#e4bd70;--b1:rgba(196,154,74,.28);--b2:rgba(43,182,115,.15);background:linear-gradient(180deg,#f6f8fb 0%,#eef3f8 100%)}
+.panel-card{background:#fff;border:1px solid #e3e9f0;border-radius:8px;padding:24px 26px;box-shadow:0 8px 24px rgba(25,49,77,.07);height:100%}
+.panel-card h5{color:#0b3154;font-weight:700;margin-bottom:16px}
+.panel-card h5 i{color:#c49a4a}
+.dl-item,.link-card{display:flex;align-items:center;gap:14px;padding:13px 14px;border:1px solid #edf0f4;border-radius:7px;margin-bottom:10px;color:#263449;text-decoration:none;transition:.3s}
+.dl-item:hover,.link-card:hover{border-color:#c49a4a;background:#fdf8ec;transform:translateX(6px);color:#0b3154}
+.dl-item>i:first-child{font-size:26px;color:#d33f3f}
+.dl-item span,.link-card span{flex:1;font-weight:600}
+.dl-item em{font-style:normal;font-size:13px;color:#8a6a2a;background:#f5eddd;padding:4px 10px;border-radius:20px}
+.link-card>i:first-child{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:#e3eefb;color:#2f6fb5}
+.link-card .ext{font-size:12px;color:#97a3b3}
+
+/* ===== শোক সংবাদ ===== */
+.condolence-section{background:#eef0f3;padding:38px 0;border-top:1px solid #dfe3e8;border-bottom:1px solid #dfe3e8}
+.condolence-card{display:flex;align-items:center;gap:22px;max-width:900px;margin:auto;background:#fff;border-left:6px solid #4a5568;border-radius:8px;padding:22px 26px;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.cd-icon{width:62px;height:62px;flex:0 0 62px;border-radius:50%;background:#e8ebef;color:#4a5568;display:grid;place-items:center;font-size:26px}
+.cd-label{font-size:13px;font-weight:700;color:#4a5568;letter-spacing:1px}
+.cd-dua{font-size:19px;font-weight:700;color:#1f2937;margin:4px 0 6px}
+.cd-body p{margin:0 0 8px;color:#556070;line-height:1.8}
+.cd-link{color:#0b3154;font-weight:600;text-decoration:none}
+.cd-link:hover{color:#c49a4a}
+@media(max-width:575.98px){.condolence-card{flex-direction:column;text-align:center}}
+
+/* ===== v4: কম প্যাডিং, শোক সংবাদ ক্যারোসেল, মেম্বার সার্চ ===== */
+.section-space{padding-top:40px;padding-bottom:64px}
+@media(max-width:575.98px){.section-space{padding-top:30px;padding-bottom:46px}}
+.section-heading{margin-bottom:32px}
+
+#members .section-heading{margin-bottom:32px}
+
+/* ===== শোক সংবাদ ক্যারোসেল (বাটন/ডট ছাড়া, অটো স্লাইড) ===== */
+.cd-carousel{overflow:hidden;max-width:900px;margin:0 auto;touch-action:pan-y}
+.cd-track{display:flex;transition:transform .7s cubic-bezier(.22,.8,.3,1)}
+.cd-slide{flex:0 0 100%;min-width:0;display:flex}
+.cd-slide .condolence-card{width:100%;max-width:none;margin:0}
+.cd-dua{margin:6px 0 10px}
+.cd-body{min-width:0}
+.cd-link i{transition:transform .25s}
+.cd-link:hover i{transform:translateX(4px)}
+.cd-slide .cd-body p{min-height:3.6em}
+@media(prefers-reduced-motion:reduce){.cd-track{transition:none}}
+
+/* ===== সার্চ সেকশন ===== */
+.search-strip{padding:30px 0}
+.search-box label{display:flex;align-items:center;gap:6px}
+.search-box input::-webkit-search-cancel-button{cursor:pointer}
+.search-box:focus-within{box-shadow:0 0 0 3px rgba(240,204,121,.65),0 10px 30px rgba(0,0,0,.25)}
+.search-results{max-width:900px;margin:14px auto 0;background:#fff;border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.22);overflow:hidden}
+.search-results[hidden]{display:none}
+.sr-count{padding:11px 20px;font-size:14px;color:#6b7686;background:#f4f6f9;border-bottom:1px solid #e6ebf1}
+.sr-list{list-style:none;margin:0;padding:0;max-height:380px;overflow-y:auto}
+.sr-list li+li{border-top:1px solid #eef1f5}
+.sr-item{display:flex;align-items:center;gap:14px;padding:12px 20px;color:#263449;text-decoration:none;transition:background .2s}
+.sr-item:hover,.sr-item:focus-visible{background:#fdf8ec;color:#0b3154;outline:0}
+.sr-item>i{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;border-radius:50%;background:#e3eefb;color:#2f6fb5}
+.sr-text{flex:1;min-width:0}
+.sr-text strong{display:block;font-weight:600;overflow-wrap:anywhere}
+.sr-text small{color:#748092}
+.sr-tag{font-size:12px;color:#8a6a2a;background:#f5eddd;padding:3px 10px;border-radius:20px;white-space:nowrap}
+.sr-text mark{background:#fbe6a8;color:inherit;padding:0 1px;border-radius:2px}
+.sr-empty{padding:22px 20px;color:#556070;text-align:center}
+@media(max-width:575.98px){.sr-item{padding:11px 14px;gap:10px}.sr-tag{display:none}}
+
+/* ===== সার্চ সেকশন: ব্যাকগ্রাউন্ডে জলছাপের মতো ছবি ===== */
+/* ছবি বদলাতে চাইলে নিচের url(...) এ নিজের ছবির পাথ দিন (যেমন assets/img/search-bg.jpg) */
+.search-strip{padding:56px 0;
+  background:
+    linear-gradient(90deg,rgba(8,39,68,.5),rgba(15,69,112,.38)),
+    url("https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=70") center/cover no-repeat,
+    #0b3154;
+  background-attachment:scroll,fixed,scroll}
+@media(max-width:991.98px){.search-strip{background-attachment:scroll}}
+.search-strip .search-box{position:relative}
+@media(max-width:575.98px){.search-strip{padding:38px 0}}
+
+/* মোবাইলেও সার্চ বক্স ডেস্কটপের মতোই এক লাইনের গোল (pill) স্টাইলে */
+@media(max-width:767.98px){
+  .search-strip .search-box{flex-wrap:nowrap;border-radius:50px;padding:6px 6px 6px 18px;gap:8px}
+  .search-strip .search-box label{width:auto}
+  .search-strip .search-box input{border:0;border-radius:0;padding:10px 4px;font-size:15px}
+  .search-strip .search-box button{width:auto;padding:10px 20px}
+}
+@media(max-width:479.98px){
+  .search-strip .search-box{padding-left:14px}
+  .search-strip .search-box .sb-text{display:none}
+  .search-strip .search-box button{padding:10px 16px}
+}

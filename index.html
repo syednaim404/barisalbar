@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="বরিশাল জেলা আইনজীবী সমিতি">
+  <title>বরিশাল জেলা আইনজীবী সমিতি</title>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/theme.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+
+<body>
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <a class="nav-brand" href="index.html"><img src="assets/img/logo.png" alt="বরিশাল জেলা আইনজীবী সমিতি"></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="মেনু খুলুন"><i class="fa-solid fa-bars"></i></button>
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">হোম</a></li>
+        <li><a href="about.html">পরিচিতি</a></li>
+        <li><a href="history.html">ইতিহাস</a></li>
+        <li><a href="gallery.html">ফটো গ্যালারী</a></li>
+        <li><a href="contact.html">যোগাযোগ</a></li>
+        <li class="has-sub">
+          <a href="javascript:void(0)" class="sub-toggle" aria-haspopup="true">প্রশাসন <i class="fa-solid fa-chevron-down"></i></a>
+          <ul class="sub-menu">
+            <li><a href="lawyers.html">আইনজীবীদের তালিকা</a></li>
+            <li><a href="staff.html">কর্মকর্তা-কর্মচারি</a></li>
+            <li><a href="committee.html">কমিটি</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <aside class="side-menu" id="sideMenu" aria-label="মোবাইল মেনু">
+    <a href="index.html"><i class="fa-solid fa-house"></i>হোম</a>
+    <a href="about.html"><i class="fa-solid fa-building-columns"></i>পরিচিতি</a>
+    <a href="history.html"><i class="fa-solid fa-landmark"></i>ইতিহাস</a>
+    <a href="gallery.html"><i class="fa-solid fa-images"></i>ফটো গ্যালারী</a>
+    <a href="contact.html"><i class="fa-solid fa-phone"></i>যোগাযোগ</a>
+    <details class="side-sub">
+      <summary><i class="fa-solid fa-users-gear"></i>প্রশাসন <i class="fa-solid fa-chevron-down caret"></i></summary>
+      <a href="lawyers.html">আইনজীবীদের তালিকা</a>
+      <a href="staff.html">কর্মকর্তা-কর্মচারি</a>
+      <a href="committee.html">কমিটি</a>
+    </details>
+  </aside>
+
+  <main id="home">
+    <section class="hero-section">
+      <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4200"
+        data-bs-pause="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1800&q=85"
+              alt="আইন ও বিচার" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1800&q=85"
+              alt="আইনজীবীদের কর্মপরিবেশ" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=85"
+              alt="আইনি নথিপত্র" class="d-block w-100">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker-wrap">
+      <div class="container d-flex align-items-center">
+        <span class="ticker-label"><i class="fa-solid fa-bullhorn me-2"></i>সর্বশেষ সংবাদ</span>
+        <div class="ticker">
+          <div class="ticker-track" id="tickerTrack">বরিশাল জেলা আইনজীবী সমিতির ওয়েবসাইটে আপনাকে স্বাগতম <span>◆</span>
+            সকল সদস্যকে নিয়মিত নোটিশ বোর্ড দেখার অনুরোধ করা হলো <span>◆</span> সমিতির কার্যক্রম ও বিজ্ঞপ্তি এখানে প্রকাশ
+            করা হবে <span>◆</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="welcome-section section-space" id="about">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="section-heading text-start"><span>আমাদের পরিচিতি</span>
+              <h2>বরিশাল জেলা আইনজীবী সমিতি</h2>
+              <div class="heading-line"></div>
+            </div>
+            <p class="lead-copy">আইনজীবীদের পেশাগত মর্যাদা, পারস্পরিক সহযোগিতা এবং ন্যায়বিচার প্রতিষ্ঠার লক্ষ্যে বরিশাল
+              জেলা আইনজীবী সমিতি কাজ করে যাচ্ছে।</p>
+            <p class="muted-copy">এই সমিতি সদস্যদের কল্যাণ, দক্ষতা বৃদ্ধি, আইন পেশার মানোন্নয়ন এবং বিচারপ্রার্থী মানুষের
+              ন্যায়বিচার প্রাপ্তিতে সহায়ক ভূমিকা পালনে প্রতিশ্রুতিবদ্ধ।</p>
+            <a href="#contact" class="btn btn-navy mt-2">বিস্তারিত জানুন <i
+                class="fa-solid fa-arrow-right ms-2"></i></a>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-photo"><img
+                src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1000&q=85"
+                alt="আইন ও জ্ঞানচর্চা">
+              <div class="about-stamp"><i class="fa-solid fa-scale-balanced"></i><strong>ন্যায়ের
+                  পক্ষে</strong><small>সেবায় ও অঙ্গীকারে</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <section class="stats-section">
+      <div class="container">
+        <div class="row g-3 text-center">
+          <div class="col-6 col-lg-3">
+            <div class="stat-item"><i class="fa-solid fa-user-tie"></i><strong>১,২০০+</strong><span>সম্মানিত
+                সদস্য</span></div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-item"><i class="fa-solid fa-calendar-days"></i><strong>১৮৮০</strong><span>প্রতিষ্ঠার
+                ঐতিহ্য</span></div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-item"><i class="fa-solid fa-people-group"></i><strong>১০</strong><span>কার্যনির্বাহী
+                সদস্য</span></div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="stat-item"><i class="fa-solid fa-scale-balanced"></i><strong>১টি</strong><span>ঐক্যবদ্ধ
+                সংগঠন</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section-space services-section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>আমাদের করণীয়</h2>
+          <div class="heading-line"></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <a class="service-card" href="single.html?id=1">
+              <span class="service-icon"><i class="fa-solid fa-file-signature"></i></span>
+              <h5>ওকালতনামা বিক্রি</h5>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <a class="service-card" href="single.html?id=2">
+              <span class="service-icon"><i class="fa-solid fa-arrow-trend-up"></i></span>
+              <h5>উন্নয়ন ও শৃংখলা</h5>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <a class="service-card" href="single.html?id=3">
+              <span class="service-icon"><i class="fa-solid fa-building"></i></span>
+              <h5>আইনজীবিদের চেম্বার বরাদ্দ</h5>
+            </a>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <a class="service-card" href="#contact">
+              <span class="service-icon"><i class="fa-solid fa-handshake-angle"></i></span>
+              <h5>আইনজীবিদের বিভিন্নমুখি সহায়তা</h5>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space message-section" id="messages">
+      <div class="container">
+        <div class="section-heading"><span>সমিতির নেতৃত্ব</span>
+          <h2>সভাপতি ও সম্পাদকের বক্তব্য</h2>
+          <div class="heading-line"></div>
+          <p>সমিতির সম্মানিত নেতৃত্বের সংক্ষিপ্ত বার্তা</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-6 d-flex">
+            <div class="message-card"><img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80"
+                alt="সভাপতি">
+              <div class="message-body"><span class="message-role">সভাপতি</span>
+                <h4>অ্যাডভোকেট মো. আব্দুল করিম</h4>
+                <p>সমিতির সকল সদস্যের ঐক্য, পেশাগত মর্যাদা ও কল্যাণ নিশ্চিত করতে আমরা একসঙ্গে কাজ করতে চাই। ন্যায়বিচার
+                  প্রতিষ্ঠায় সবার সহযোগিতা কামনা করছি।</p><a href="single.html?id=1" class="stretched-link">আরও পড়ুন</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 d-flex">
+            <div class="message-card"><img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
+                alt="সাধারণ সম্পাদক">
+              <div class="message-body"><span class="message-role">সাধারণ সম্পাদক</span>
+                <h4>অ্যাডভোকেট মো. রফিকুল ইসলাম</h4>
+                <p>সদস্যদের সেবা, সমিতির উন্নয়ন এবং স্বচ্ছ কার্যক্রম পরিচালনায় আমরা আন্তরিকভাবে কাজ করে যাচ্ছি। সকলের
+                  মতামত ও সহযোগিতা আমাদের পথচলার শক্তি।</p><a href="single.html?id=2" class="stretched-link">আরও পড়ুন</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <section class="section-space soft-bg" id="notice">
+      <div class="container">
+        <!-- Font Awesome 6 CDN (already included in <head>):
+             https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css -->
+        <div class="section-heading">
+          <h2>নোটিশ বোর্ড</h2>
+          <div class="heading-line"></div>
+          <p>সব নোটিশ এক জায়গায়</p>
+        </div>
+        <div class="notice-card">
+          <table class="table notice-table mb-0">
+            <thead>
+              <tr>
+                <th scope="col">তারিখ</th>
+                <th scope="col">শিরোনাম</th>
+                <th scope="col" class="text-center">ফাইল</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- নতুন নোটিশ যোগ করতে নিচের একটি <tr> কপি করে পেস্ট করুন -->
+              <tr>
+                <td>০৮-১১-২৬</td>
+                <td class="notice-title">বার্ষিক সাধারণ সভা সংক্রান্ত বিজ্ঞপ্তি</td>
+                <td class="text-center"><a href="assets/pdf/notice-1.pdf" target="_blank" rel="noopener" class="text-danger fs-3" aria-label="PDF ডাউনলোড"><i class="fa-solid fa-file-pdf"></i></a></td>
+              </tr>
+              <tr>
+                <td>০৫-১১-২৬</td>
+                <td class="notice-title">সদস্য চাঁদা পরিশোধের অনুরোধ</td>
+                <td class="text-center"><a href="assets/pdf/notice-2.pdf" target="_blank" rel="noopener" class="text-danger fs-3" aria-label="PDF ডাউনলোড"><i class="fa-solid fa-file-pdf"></i></a></td>
+              </tr>
+              <tr>
+                <td>০১-১১-২৬</td>
+                <td class="notice-title">আইনজীবী পরিচয়পত্র হালনাগাদ</td>
+                <td class="text-center"><a href="assets/pdf/notice-3.pdf" target="_blank" rel="noopener" class="text-danger fs-3" aria-label="PDF ডাউনলোড"><i class="fa-solid fa-file-pdf"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+
+ 
+
+    <section class="section-space soft-bg" id="committee">
+      <div class="container">
+        <div class="section-heading"><span>নেতৃত্ব</span>
+          <h2>কার্যনির্বাহী কমিটি</h2>
+          <div class="heading-line"></div>
+          <p>সমিতির কার্যক্রম পরিচালনায় দায়িত্বপ্রাপ্ত সম্মানিত ব্যক্তিবর্গ</p>
+        </div>
+        <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4 justify-content-center">
+          <div class="col">
+            <a class="card-link" href="single.html?id=1"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট মো. আব্দুল করিম">
+              <h5>অ্যাডভোকেট মো. আব্দুল করিম</h5><span>সভাপতি</span>
+            </div></a>
+          </div>
+          <div class="col">
+            <a class="card-link" href="single.html?id=2"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট মো. রফিকুল ইসলাম">
+              <h5>অ্যাডভোকেট মো. রফিকুল ইসলাম</h5><span>সাধারণ সম্পাদক</span>
+            </div></a>
+          </div>
+          <div class="col">
+            <a class="card-link" href="single.html?id=3"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট শামীম আহমেদ">
+              <h5>অ্যাডভোকেট শামীম আহমেদ</h5><span>সহ-সভাপতি</span>
+            </div></a>
+          </div>
+          <div class="col">
+            <a class="card-link" href="single.html?id=4"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট নাসরিন আক্তার">
+              <h5>অ্যাডভোকেট নাসরিন আক্তার</h5><span>যুগ্ম সম্পাদক</span>
+            </div></a>
+          </div>
+          <div class="col">
+            <a class="card-link" href="single.html?id=5"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট কামরুল হাসান">
+              <h5>অ্যাডভোকেট কামরুল হাসান</h5><span>সহ-সভাপতি</span>
+            </div></a>
+          </div>
+          <div class="col">
+            <a class="card-link" href="single.html?id=6"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট রুবিনা ইয়াসমিন">
+              <h5>অ্যাডভোকেট রুবিনা ইয়াসমিন</h5><span>সহ-সম্পাদক</span>
+            </div></a>
+          </div>
+          <div class="col">
+            <a class="card-link" href="single.html?id=7"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট জাহিদ হোসেন">
+              <h5>অ্যাডভোকেট জাহিদ হোসেন</h5><span>কোষাধ্যক্ষ</span>
+            </div></a>
+          </div>
+          <div class="col">
+            <a class="card-link" href="single.html?id=8"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট শারমিন সুলতানা">
+              <h5>অ্যাডভোকেট শারমিন সুলতানা</h5><span>গ্রন্থাগার সম্পাদক</span>
+            </div></a>
+          </div>
+          <div class="col">
+            <a class="card-link" href="single.html?id=9"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট আরিফুল ইসলাম">
+              <h5>অ্যাডভোকেট আরিফুল ইসলাম</h5><span>সমাজকল্যাণ সম্পাদক</span>
+            </div></a>
+          </div>
+          <div class="col">
+            <a class="card-link" href="single.html?id=10"><div class="person-card"><img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=500&q=80"
+                alt="অ্যাডভোকেট মাহমুদা খাতুন">
+              <h5>অ্যাডভোকেট মাহমুদা খাতুন</h5><span>দপ্তর সম্পাদক</span>
+            </div></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- সার্চ সেকশন: পেজের কমিটি, সদস্য, নোটিশ, ইভেন্ট ও সাবেক নেতৃত্বে খোঁজে -->
+    <section class="search-strip" id="search" aria-label="সার্চ">
+      <div class="container">
+        <form class="search-box" id="siteSearchForm" role="search" autocomplete="off">
+          <label for="siteSearch"><i class="fa-solid fa-magnifying-glass"></i><span class="sb-text">খুঁজুন</span></label>
+          <input type="search" id="siteSearch" placeholder="নাম, পদবি, নোটিশ বা ইভেন্ট লিখুন…" aria-controls="searchResults">
+          <button type="submit">খুঁজুন</button>
+        </form>
+        <div class="search-results" id="searchResults" aria-live="polite" hidden></div>
+      </div>
+    </section>
+
+    <section class="section-space" id="members">
+      <div class="container">
+        <div class="section-heading"><span>আমাদের গর্ব</span>
+          <h2>সম্মানিত সদস্যবৃন্দ</h2>
+          <div class="heading-line"></div>
+          <p>সমিতির কয়েকজন সদস্যের নমুনা পরিচিতি</p>
+        </div>
+        <div class="mc" id="memberCarousel"><button class="mc-btn prev" aria-label="আগের"><i
+              class="fa-solid fa-chevron-left"></i></button>
+          <div class="mc-view">
+            <div class="mc-track">
+              <div class="mc-item">
+                <a class="card-link" href="single.html?id=1"><div class="member-card"><img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+                    alt="সাইফুল ইসলাম">
+                  <h6>অ্যাডভোকেট সাইফুল ইসলাম</h6><small>সদস্য</small>
+                </div></a>
+              </div>
+              <div class="mc-item">
+                <a class="card-link" href="single.html?id=2"><div class="member-card"><img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80"
+                    alt="ফারজানা রহমান">
+                  <h6>অ্যাডভোকেট ফারজানা রহমান</h6><small>সদস্য</small>
+                </div></a>
+              </div>
+              <div class="mc-item">
+                <a class="card-link" href="single.html?id=3"><div class="member-card"><img
+                    src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&w=300&q=80"
+                    alt="ইমরান হোসেন">
+                  <h6>অ্যাডভোকেট ইমরান হোসেন</h6><small>সদস্য</small>
+                </div></a>
+              </div>
+              <div class="mc-item">
+                <a class="card-link" href="single.html?id=4"><div class="member-card"><img
+                    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=300&q=80"
+                    alt="সুমাইয়া আক্তার">
+                  <h6>অ্যাডভোকেট সুমাইয়া আক্তার</h6><small>সদস্য</small>
+                </div></a>
+              </div>
+              <div class="mc-item">
+                <a class="card-link" href="single.html?id=5"><div class="member-card"><img
+                    src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=300&q=80"
+                    alt="মাহফুজুর রহমান">
+                  <h6>অ্যাডভোকেট মাহফুজুর রহমান</h6><small>সদস্য</small>
+                </div></a>
+              </div>
+              <div class="mc-item">
+                <a class="card-link" href="single.html?id=6"><div class="member-card"><img
+                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80"
+                    alt="তানজিলা ইসলাম">
+                  <h6>অ্যাডভোকেট তানজিলা ইসলাম</h6><small>সদস্য</small>
+                </div></a>
+              </div>
+              <div class="mc-item">
+                <a class="card-link" href="single.html?id=7"><div class="member-card"><img
+                    src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&w=300&q=80"
+                    alt="নাজমুল হক">
+                  <h6>অ্যাডভোকেট নাজমুল হক</h6><small>সদস্য</small>
+                </div></a>
+              </div>
+              <div class="mc-item">
+                <a class="card-link" href="single.html?id=8"><div class="member-card"><img
+                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80"
+                    alt="তাসলিমা বেগম">
+                  <h6>অ্যাডভোকেট তাসলিমা বেগম</h6><small>সদস্য</small>
+                </div></a>
+              </div>
+            </div>
+          </div><button class="mc-btn next" aria-label="পরের"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space leaders-section" id="leaders">
+      <div class="container">
+        <div class="section-heading"><span>ঐতিহ্য</span>
+          <h2>সাবেক সভাপতি ও সাধারণ সম্পাদক</h2>
+          <div class="heading-line"></div>
+          <p>যাঁদের নেতৃত্বে সমিতি এগিয়ে এসেছে (নমুনা তালিকা — প্রকৃত তথ্য দিয়ে প্রতিস্থাপন করুন)</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="leader-card">
+              <h5><i class="fa-solid fa-award me-2"></i>সাবেক সভাপতি</h5>
+              <ul>
+                <li><span class="ld-name">অ্যাডভোকেট মো. আব্দুল হালিম</span><span class="ld-year">২০২২ – ২০২৫</span></li>
+                <li><span class="ld-name">অ্যাডভোকেট এ. কে. এম. সালাউদ্দিন</span><span class="ld-year">২০১৮ – ২০২১</span></li>
+                <li><span class="ld-name">অ্যাডভোকেট আবুল কালাম আজাদ</span><span class="ld-year">২০১৪ – ২০১৭</span></li>
+                <li><span class="ld-name">অ্যাডভোকেট মো. নুরুল ইসলাম</span><span class="ld-year">২০১০ – ২০১৩</span></li>
+                <li><span class="ld-name">অ্যাডভোকেট সৈয়দ মাহবুব আলী</span><span class="ld-year">২০০৬ – ২০০৯</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="leader-card">
+              <h5><i class="fa-solid fa-pen-nib me-2"></i>সাবেক সাধারণ সম্পাদক</h5>
+              <ul>
+                <li><span class="ld-name">অ্যাডভোকেট মো. শাহজাহান</span><span class="ld-year">২০২২ – ২০২৫</span></li>
+                <li><span class="ld-name">অ্যাডভোকেট রেজাউল করিম</span><span class="ld-year">২০১৮ – ২০২১</span></li>
+                <li><span class="ld-name">অ্যাডভোকেট আনোয়ার হোসেন</span><span class="ld-year">২০১৪ – ২০১৭</span></li>
+                <li><span class="ld-name">অ্যাডভোকেট মিজানুর রহমান</span><span class="ld-year">২০১০ – ২০১৩</span></li>
+                <li><span class="ld-name">অ্যাডভোকেট হাফিজুর রহমান</span><span class="ld-year">২০০৬ – ২০০৯</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space events-section" id="events">
+      <div class="container">
+        <div class="section-heading"><span>আসন্ন কার্যক্রম</span>
+          <h2>ইভেন্ট</h2>
+          <div class="heading-line"></div>
+          <p>সমিতির আসন্ন ও সাম্প্রতিক আয়োজনসমূহ</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-3">
+            <article class="event-card">
+              <div class="thumb"><img
+                  src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=700&q=80"
+                  alt="বার্ষিক সাধারণ সভা"><span class="event-tag">সভা</span></div>
+              <div class="event-body">
+                <h5>বার্ষিক সাধারণ সভা</h5>
+                <div class="event-meta"><span><i class="fa-regular fa-calendar me-1"></i>১৫ নভেম্বর ২০২৬</span><span><i class="fa-solid fa-location-dot me-1"></i>সমিতি ভবন</span></div>
+                <p>সমিতির বার্ষিক আয়-ব্যয়, কার্যক্রম পর্যালোচনা ও আগামী পরিকল্পনা নিয়ে আলোচনা হবে। সকল সদস্যের
+                  উপস্থিতি কাম্য।</p><a href="single.html?id=1" class="stretched-link">আরও পড়ুন</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="event-card">
+              <div class="thumb"><img
+                  src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=700&q=80"
+                  alt="আইনি প্রশিক্ষণ কর্মশালা"><span class="event-tag">প্রশিক্ষণ</span></div>
+              <div class="event-body">
+                <h5>আইনি প্রশিক্ষণ কর্মশালা</h5>
+                <div class="event-meta"><span><i class="fa-regular fa-calendar me-1"></i>২২ নভেম্বর ২০২৬</span><span><i class="fa-solid fa-location-dot me-1"></i>সেমিনার কক্ষ</span></div>
+                <p>নবীন আইনজীবীদের জন্য আদালতের কার্যপদ্ধতি ও আইনি ড্রাফটিং বিষয়ে দিনব্যাপী প্রশিক্ষণ।</p><a href="single.html?id=2" class="stretched-link">আরও পড়ুন</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="event-card">
+              <div class="thumb"><img
+                  src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=700&q=80"
+                  alt="বিনামূল্যে আইনি সহায়তা ক্যাম্প"><span class="event-tag">সেবা</span></div>
+              <div class="event-body">
+                <h5>বিনামূল্যে আইনি সহায়তা ক্যাম্প</h5>
+                <div class="event-meta"><span><i class="fa-regular fa-calendar me-1"></i>৫ ডিসেম্বর ২০২৬</span><span><i class="fa-solid fa-location-dot me-1"></i>সমিতি প্রাঙ্গণ</span></div>
+                <p>দরিদ্র ও অসহায় মানুষের জন্য বিনামূল্যে আইনি পরামর্শ ও সহায়তা প্রদান কর্মসূচি।</p><a href="single.html?id=3" class="stretched-link">আরও পড়ুন</a>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="event-card">
+              <div class="thumb"><img
+                  src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=700&q=80"
+                  alt="মহান বিজয় দিবস আলোচনা সভা"><span class="event-tag">আলোচনা</span></div>
+              <div class="event-body">
+                <h5>মহান বিজয় দিবস আলোচনা সভা</h5>
+                <div class="event-meta"><span><i class="fa-regular fa-calendar me-1"></i>১৬ ডিসেম্বর ২০২৬</span><span><i class="fa-solid fa-location-dot me-1"></i>সমিতি ভবন</span></div>
+                <p>মুক্তিযুদ্ধের স্মৃতিচারণ, আলোচনা ও দোয়া মাহফিলের আয়োজন করা হবে।</p><a href="single.html?id=4" class="stretched-link">আরও পড়ুন</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <section class="section-space dl-section" id="downloads">
+      <div class="container">
+        <div class="section-heading"><span>প্রয়োজনীয় তথ্য</span>
+          <h2>ডাউনলোড ও দরকারি লিংক</h2>
+          <div class="heading-line"></div>
+          <p>ফরম, গঠনতন্ত্র এবং গুরুত্বপূর্ণ ওয়েবসাইট এক জায়গায়</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-6" id="dlCol">
+            <div class="panel-card">
+              <h5><i class="fa-solid fa-download me-2"></i>ডাউনলোড সেন্টার</h5>
+              <a class="dl-item" href="assets/pdf/constitution.pdf" download>
+                <i class="fa-solid fa-file-pdf"></i><span>গঠনতন্ত্র</span><em>PDF <i class="fa-solid fa-download ms-1"></i></em>
+              </a>
+              <a class="dl-item" href="assets/pdf/member-form.pdf" download>
+                <i class="fa-solid fa-file-pdf"></i><span>সদস্যপদের আবেদন ফরম</span><em>PDF <i class="fa-solid fa-download ms-1"></i></em>
+              </a>
+              <a class="dl-item" href="assets/pdf/wakalatnama.pdf" download>
+                <i class="fa-solid fa-file-pdf"></i><span>ওকালতনামার নমুনা</span><em>PDF <i class="fa-solid fa-download ms-1"></i></em>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-6" id="links">
+            <div class="panel-card">
+              <h5><i class="fa-solid fa-link me-2"></i>দরকারি লিংক</h5>
+              <a class="link-card" href="https://www.supremecourt.gov.bd" target="_blank" rel="noopener"><i class="fa-solid fa-landmark"></i><span>সুপ্রিম কোর্ট অব বাংলাদেশ</span><i class="fa-solid fa-arrow-up-right-from-square ext"></i></a>
+              <a class="link-card" href="https://ecourts.gov.bd" target="_blank" rel="noopener"><i class="fa-solid fa-gavel"></i><span>ই-জুডিশিয়ারি</span><i class="fa-solid fa-arrow-up-right-from-square ext"></i></a>
+              <a class="link-card" href="https://barcouncil.gov.bd" target="_blank" rel="noopener"><i class="fa-solid fa-scale-balanced"></i><span>বাংলাদেশ বার কাউন্সিল</span><i class="fa-solid fa-arrow-up-right-from-square ext"></i></a>
+              <a class="link-card" href="https://lawjusticediv.gov.bd" target="_blank" rel="noopener"><i class="fa-solid fa-building-columns"></i><span>বাংলাদেশ আইন ও বিচার বিভাগ</span><i class="fa-solid fa-arrow-up-right-from-square ext"></i></a>
+              <a class="link-card" href="http://bdlaws.minlaw.gov.bd" target="_blank" rel="noopener"><i class="fa-solid fa-book"></i><span>বাংলাদেশ কোড (আইন সংগ্রহ)</span><i class="fa-solid fa-arrow-up-right-from-square ext"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" id="gallery">
+      <div class="container">
+        <div class="section-heading"><span>স্মৃতির পাতায়</span>
+          <h2>ফটো গ্যালারি</h2>
+          <div class="heading-line"></div>
+          <p>সমিতির বিভিন্ন আয়োজন ও কার্যক্রমের কিছু মুহূর্ত</p>
+        </div>
+        <div class="gallery-six">
+          <a class="gs g1" href="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80" alt="লাইব্রেরি" loading="lazy"><span>লাইব্রেরি</span></a>
+          <a class="gs g2" href="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80" alt="সভা" loading="lazy"><span>সভা</span></a>
+          <a class="gs g3" href="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=800&q=80" alt="আইন" loading="lazy"><span>আইন</span></a>
+          <a class="gs g4" href="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80" alt="সম্মেলন" loading="lazy"><span>সম্মেলন</span></a>
+          <a class="gs g5" href="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80" alt="কর্মশালা" loading="lazy"><span>কর্মশালা</span></a>
+          <a class="gs g6" href="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1400&q=80"><img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="অনুষ্ঠান" loading="lazy"><span>অনুষ্ঠান</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- শোক সংবাদ: একটি কার্ড দেখায়, নিজে নিজে ঘোরে (কোনো বাটন/ডট নেই)।
+         নতুন শোক সংবাদ যোগ করতে একটি <div class="cd-slide"> ... </div> কপি করে পেস্ট করুন। -->
+    <section class="condolence-section" id="condolence" aria-label="শোক সংবাদ">
+      <div class="container">
+        <div class="cd-carousel" id="cdCarousel" aria-roledescription="ক্যারোসেল">
+          <div class="cd-track">
+          <div class="cd-slide" role="group" aria-roledescription="স্লাইড" aria-label="1">
+            <article class="condolence-card">
+              <div class="cd-icon"><i class="fa-solid fa-dove"></i></div>
+              <div class="cd-body">
+                <span class="cd-label">শোক সংবাদ</span>
+                <h3 class="cd-dua">ইন্না লিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন</h3>
+                <p>সমিতির সদস্য অ্যাডভোকেট ________ ইন্তেকাল করেছেন। মরহুমের রুহের মাগফিরাত কামনায় দোয়া মাহফিল অনুষ্ঠিত হবে ________ তারিখে। (নমুনা — প্রকৃত তথ্য দিন)</p>
+                <a href="single.html?id=1" class="cd-link">বিস্তারিত <i class="fa-solid fa-arrow-right ms-1"></i></a>
+              </div>
+            </article>
+          </div>
+          <div class="cd-slide" role="group" aria-roledescription="স্লাইড" aria-label="2">
+            <article class="condolence-card">
+              <div class="cd-icon"><i class="fa-solid fa-dove"></i></div>
+              <div class="cd-body">
+                <span class="cd-label">শোক সংবাদ</span>
+                <h3 class="cd-dua">ইন্না লিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন</h3>
+                <p>সমিতির প্রবীণ সদস্য অ্যাডভোকেট ________ ইন্তেকাল করেছেন। জানাজার সময় ও স্থান: ________। (নমুনা — প্রকৃত তথ্য দিন)</p>
+                <a href="single.html?id=2" class="cd-link">বিস্তারিত <i class="fa-solid fa-arrow-right ms-1"></i></a>
+              </div>
+            </article>
+          </div>
+          <div class="cd-slide" role="group" aria-roledescription="স্লাইড" aria-label="3">
+            <article class="condolence-card">
+              <div class="cd-icon"><i class="fa-solid fa-dove"></i></div>
+              <div class="cd-body">
+                <span class="cd-label">শোক সংবাদ</span>
+                <h3 class="cd-dua">ইন্না লিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন</h3>
+                <p>সমিতির সদস্য অ্যাডভোকেট ________ এর মাতা ইন্তেকাল করেছেন। মরহুমার রুহের মাগফিরাত কামনায় সকলের দোয়া কাম্য। (নমুনা — প্রকৃত তথ্য দিন)</p>
+                <a href="single.html?id=3" class="cd-link">বিস্তারিত <i class="fa-solid fa-arrow-right ms-1"></i></a>
+              </div>
+            </article>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section section-space" id="contact">
+      <div class="container">
+        <div class="section-heading"><span>যোগাযোগ</span>
+          <h2>আমাদের সঙ্গে যোগাযোগ করুন</h2>
+          <div class="heading-line"></div>
+          <p>যেকোনো তথ্যের জন্য সমিতির কার্যালয়ে যোগাযোগ করুন</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-5">
+            <div class="contact-card">
+              <div class="contact-item"><i class="fa-solid fa-location-dot"></i>
+                <div><strong>ঠিকানা</strong>
+                  <p>ফজলুল হক এভেনিউ, বরিশাল।</p>
+                </div>
+              </div>
+              <div class="contact-item"><i class="fa-solid fa-phone"></i>
+                <div><strong>ফোন</strong>
+                  <p><a href="tel:02478863466">০২৪৭৮৮৬৩৪৬৬</a></p>
+                </div>
+              </div>
+              <div class="contact-item"><i class="fa-solid fa-envelope"></i>
+                <div><strong>ই-মেইল</strong>
+                  <p><a href="mailto:barishalbar1880@gmail.com">barishalbar1880@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="contact-item"><i class="fa-solid fa-clock"></i>
+                <div><strong>কার্যালয়ের সময়</strong>
+                  <p>রবিবার – বৃহস্পতিবার, সকাল ১০টা – বিকাল ৫টা</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="map-frame"><iframe title="বরিশাল জেলা আইনজীবী সমিতির অবস্থান"
+                src="https://www.google.com/maps?q=Barishal%20District%20Bar%20Association&output=embed" loading="lazy"
+                allowfullscreen></iframe></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4 footer-main">
+        <div class="col-md-4">
+          <h5>বরিশাল জেলা আইনজীবী সমিতি</h5>
+          <p>আইনজীবীদের ঐক্য, পেশাগত উন্নয়ন এবং ন্যায়বিচার প্রতিষ্ঠায় আমাদের পথচলা।</p>
+          <div class="footer-social"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i
+                class="fa-brands fa-youtube"></i></a><a href="mailto:barishalbar1880@gmail.com"><i
+                class="fa-solid fa-envelope"></i></a></div>
+        </div>
+        <div class="col-md-4">
+          <h5>গুরুত্বপূর্ণ লিংক</h5>
+          <ul>
+            <li><a href="#about">আমাদের সম্পর্কে</a></li>
+            <li><a href="#committee">কার্যনির্বাহী কমিটি</a></li>
+            <li><a href="#members">সদস্যবৃন্দ</a></li>
+            <li><a href="#notice">নোটিশ বোর্ড</a></li>
+            <li><a href="#downloads">ডাউনলোড</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>যোগাযোগের তথ্য</h5>
+          <ul class="footer-contact">
+            <li><i class="fa-solid fa-location-dot"></i> ফজলুল হক এভেনিউ, বরিশাল।</li>
+            <li><i class="fa-solid fa-phone"></i> ০২৪৭৮৮৬৩৪৬৬</li>
+            <li><i class="fa-solid fa-envelope"></i> barishalbar1880@gmail.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">© ২০২৬ সর্বস্বত্ব সংরক্ষিত — <a href="#">Barishal Bar Association</a> | <span id="next">Developed</span> By <a href="https://nextbarisal.com/" target="_blank">Next Barisal</a></div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content"><img id="mImg" class="w-100 d-none" alt="">
+        <div class="modal-body p-4"><button type="button" class="btn-close float-end" data-bs-dismiss="modal"
+            aria-label="বন্ধ"></button>
+          <h4 id="mTitle" class="fw-bold" style="color:#0b3154"></h4>
+          <p id="mMeta" class="text-muted small"></p>
+          <p id="mDesc" style="line-height:1.9"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="backToTop" class="back-to-top" aria-label="উপরে যান"><i class="fa-solid fa-arrow-up"></i></button>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+  <script src="assets/js/extras.js"></script>
+</body>
+
+</html>
